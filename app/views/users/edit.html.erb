@@ -1,0 +1,10 @@
+<h1>Edit User</h1>
+
+<%= form_for(@user) do |f| %>
+  <%= f.label :github_access_token %>
+  <%= f.text_field :github_access_token %>
+
+  <%= f.submit "Update User" %>
+
+  <%= link_to 'Back', :back %>
+<% end %>

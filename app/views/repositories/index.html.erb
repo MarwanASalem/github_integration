@@ -1,0 +1,16 @@
+<% if @repos.first[:error_message] %>
+  <p><%= @repos.first[:error_message] %></p>
+<% else %>
+  <div>
+    <%= 'All Repos:' %>
+    <% @repos.each do |repo| %>
+      <h4>
+      <%= repo.full_name %>
+
+      <%= link_to "View Repo", repo_details_repositories_path(:repo_name => repo.full_name) %>
+      </h4>
+    <% end %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', :back %>

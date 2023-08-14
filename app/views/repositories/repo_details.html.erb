@@ -1,0 +1,9 @@
+<% if @repository[:error_message] %>
+  <p><%= @repository[:error_message] %></p>
+<% else %>
+  <h1>Name : <%= @repository[:name] %></h1>
+  <p>Description: <%= @repository[:description] %></p>
+  <p>Stargazer Count: <%= @repository[:stargazer_count] %></p>
+<% end %>
+
+<%= link_to 'Back', :back %>
