@@ -18,12 +18,10 @@ class GithubGraphqlApi
         }
       }
     GRAPHQL
-
     variables = {
       owner: @owner,
       name: @name
     }
-
     response = HTTParty.post(
       BASE_URL,
       headers: {
@@ -32,7 +30,6 @@ class GithubGraphqlApi
       },
       body: { query: query, variables: variables }.to_json
     )
-
     if response.code == 200
       data = JSON.parse(response.body)['data']['repository']
       {
